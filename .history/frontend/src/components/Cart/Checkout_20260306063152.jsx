@@ -1,0 +1,41 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+const cart = {
+  products: [
+    {
+      name: "Stylish Sneakers",
+      price: 135,
+      size: "M",
+      color: "Black",
+      image: "https://picsum.photos/200?random=1",
+    },
+    {
+      name: "Casual Hoodie",
+      price: 145,
+      size: "S",
+      color: "Gray",
+      image: "https://picsum.photos/200?random=2",
+    },
+  ],
+  totalPrice: 275,
+};
+
+const Checkout = () => {
+  const navigate = useNavigate();
+  const [shippingAddress, setShippingAddress] = useState({
+    firstName: "",
+    lastName: "",
+    address: "",
+    city: "",
+    postalCode: "",
+    country: "",
+    phone: "",
+  });
+  return <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto py-10 px-6 tracking-tighter">
+    {/* Left Section */}
+    <div className="bg-white"></div>
+  </div>;
+};
+
+export default Checkout;
