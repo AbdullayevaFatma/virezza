@@ -1,0 +1,12 @@
+
+const Login = () => {
+  const [email,setEmail] = useState("")
+  const [password,setPassword] = useState("")
+  return (
+    <div className="flex">
+      <div className="w-full md:w-1/2"></div>
+    </div>
+  )
+}
+
+export default Login
