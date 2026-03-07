@@ -32,7 +32,7 @@ const App = () => {
     <Route path='/my-orders' element={<MyOrdersPage/>}/>
     </Route>
     {/* Admin Layout */}
-    <Route path="/admin" element={<AdminLayout/>}></Route>
+    <Route path="/" element={<AdminLayout/>}></Route>
    </Routes>
    </BrowserRouter>
   )
