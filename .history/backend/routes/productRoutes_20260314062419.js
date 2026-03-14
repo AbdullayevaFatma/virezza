@@ -133,11 +133,10 @@ router.delete("/:id",protect,admin,async(req,res)=>{
       await product.deleteOne()
       res.json({message: "Product removed"})
     }else{
-      res.status(401).json({message:"Product not found"})
+      
     }
   } catch (error) {
-    console.error(error)
-    res.status(500).send("Server error")
+    
   }
 })
 
