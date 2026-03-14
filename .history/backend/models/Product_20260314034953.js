@@ -103,7 +103,7 @@ const productSchema = new mongoose.Schema(
       height: Number,
      
     },
-     weight: Number,
+     weight: Number
   },
   { timestamps: true },
 );

@@ -3,7 +3,6 @@ const cors = require("cors")
 const dotenv = require("dotenv")
 const connectDB = require("./config/db")
 const userRoutes = require("./routes/userRoutes")
-const productRoutes = require("./routes/productRoutes")
 
 const app = express()
 
@@ -20,6 +19,6 @@ app.get("/",(req,res)=>{res.send("WELCOME")})
 
 // API ROUTES
 app.use("/api/users",userRoutes)
-app.use("/api/products",productRoutes)
+app.use("/api/users",pro)
 
 app.listen(PORT,()=>{console.log(`Server is running on http://localhost:${PORT}`)})

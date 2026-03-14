@@ -30,4 +30,4 @@ const admin =(req,res,next)=>{
     res.status(403).json({message:"Not authorized as an admin"})
   }
 }
-module.exports = {protect,admin}
+module.exports = {protect}
