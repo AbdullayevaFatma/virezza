@@ -197,8 +197,6 @@ router.get("/", async (req, res) => {
     }
 
     // sort logic
-
-    let sort = {};
     if (sortBy) {
       switch (sortBy) {
         case "priceAsc":
@@ -215,17 +213,8 @@ router.get("/", async (req, res) => {
       }
     }
 
-    //Fetch data and apply sorting and limit
-
-    let products = await Product.find(query)
-      .sort(sort)
-      .limit(Number(limit) || 0);
-
-    res.json(products);
-  } catch (error) {
-    console.error(error);
-    res.status(500).send("Server error");
-  }
+    
+  } catch (error) {}
 });
 
 module.exports = router;
