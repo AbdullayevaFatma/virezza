@@ -116,12 +116,9 @@ router.put("/:id", protect, admin, async (req, res) => {
       const updatedProduct = await product.save()
       res.json(updatedProduct)
     }else{
-      res.status(404).json({message:"Product not found"})
+      res.status()
     }
-  } catch (error) {
-    console.log(error);
-    res.status(500).send("Server error")
-  }
+  } catch (error) {}
 });
 
 module.exports = router;

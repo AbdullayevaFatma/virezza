@@ -120,7 +120,7 @@ router.put("/:id", protect, admin, async (req, res) => {
     }
   } catch (error) {
     console.log(error);
-    res.status(500).send("Server error")
+    res.status(500)
   }
 });
 

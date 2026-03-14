@@ -118,10 +118,7 @@ router.put("/:id", protect, admin, async (req, res) => {
     }else{
       res.status(404).json({message:"Product not found"})
     }
-  } catch (error) {
-    console.log(error);
-    res.status(500).send("Server error")
-  }
+  } catch (error) {}
 });
 
 module.exports = router;
