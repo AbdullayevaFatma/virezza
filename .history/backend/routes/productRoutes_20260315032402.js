@@ -236,12 +236,10 @@ router.get("/best-seller",async(req,res)=>{
     if(bestSeller){
       res.json(bestSeller)
     }else{
-      res.status(404).json({message:"No best seller found"})
+      res.status(404)
     }
     res.send("this is ok")
   } catch (error) {
-    console.error(error);
-    res.status(500).send("Server Error")
     
   }
 })

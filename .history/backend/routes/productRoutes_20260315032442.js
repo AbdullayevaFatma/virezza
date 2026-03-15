@@ -241,7 +241,7 @@ router.get("/best-seller",async(req,res)=>{
     res.send("this is ok")
   } catch (error) {
     console.error(error);
-    res.status(500).send("Server Error")
+    res.status(500)
     
   }
 })

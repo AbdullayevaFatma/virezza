@@ -233,15 +233,8 @@ router.get("/", async (req, res) => {
 router.get("/best-seller",async(req,res)=>{
   try {
     const bestSeller = await Product.findOne().sort({rating: -1})
-    if(bestSeller){
-      res.json(bestSeller)
-    }else{
-      res.status(404).json({message:"No best seller found"})
-    }
     res.send("this is ok")
   } catch (error) {
-    console.error(error);
-    res.status(500).send("Server Error")
     
   }
 })
