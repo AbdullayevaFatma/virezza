@@ -37,7 +37,7 @@ router.post("/", async (req, res) => {
 
       if (productIndex > -1) {
         //ıf the product already exists,update the quantity
-        cart.products[productIndex].quantity += Number(quantity);
+       cart.products[productIndex].quantity += Number(quantity);
       } else {
         cart.products.push({
           productId,
@@ -72,13 +72,14 @@ router.post("/", async (req, res) => {
             quantity,
           },
         ],
-        totalPrice: product.price * quantity,
+        totalPrice: product.price * quantity
       });
-      return res.status(201).json(newCart);
+      return res.status(201).json(newCart)
     }
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: "Server error" });
+    res.status(500).json({message: "Server error"})
+    
   }
 });
 
@@ -86,39 +87,7 @@ router.post("/", async (req, res) => {
 //@desc Update  product quantity in the cart for a guest or logged in user
 // @access PUBLIC
 
-router.put("/", async (req, res) => {
-  const { productId, quantity, size, color, guestId, userId } = req.body;
-  try {
-    let cart = await getCart(userId, guestId);
-    if (!cart) return res.status(404).json({ message: "Cart not found" });
-    const productIndex = cart.products.findIndex(
-      (p) =>
-        p.productId.toString() === productId &&
-        p.size === size &&
-        p.color === color,
-    );
-    if (productIndex > -1) {
-      // update quantity
-      if (quantity > 0) {
-        cart.products[productIndex].quantity = quantity;
-      } else {
-        cart.products.splice(productIndex, 1);
-      }
-      cart.totalPrice = cart.products.reduce(
-        (acc, item) => acc + item.price * item.quantity,
-        0,
-      );
-      await cart.save();
-      return res.status(200).json(cart);
-    } else {
-      res.status(404).json({ message: "Product not found in cart" });
-    }
-  } catch (error) {
-    console.error(error);
-    return res.status(500).json({ message: "Server error" });
-  }
-});
-
-
-
-module.exports = router;
+router.put("/",async(req,res)=>{
+  const {}
+})
+module.exports = router
