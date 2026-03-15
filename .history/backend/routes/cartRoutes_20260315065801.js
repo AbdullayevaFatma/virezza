@@ -162,8 +162,6 @@ router.get("/", async (req, res) => {
 
     if (cart) {
       return res.json(cart);
-    }else{
-      res.status(404).json({message:"Cart not found"})
     }
   } catch (error) {
     console.error(error);
