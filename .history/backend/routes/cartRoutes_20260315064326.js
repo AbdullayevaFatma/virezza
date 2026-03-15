@@ -129,19 +129,8 @@ try {
 
   if(!cart) return res.status(404).json({message:"Cart not found"})
     const productIndex = cart.products.findIndex((p)=>p.productId.toString() ===productId && p.size ===size && p.color === color)
-  if(productIndex >-1){
-    cart.products.splice(productIndex,1)
-
-     cart.totalPrice = cart.products.reduce((acc,item)=>acc +item.price * item.quantity,0)
-
-    await cart.save()
-    return res.status(200).json(cart)
-  }else{
-    return res.status(404).json({message:"Product not found in cart"})
-  }
+  if()
 } catch (error) {
-  console.error(error);
-  return res.status(500).json({message: "Server error"})
   
 }
 })

@@ -132,16 +132,9 @@ try {
   if(productIndex >-1){
     cart.products.splice(productIndex,1)
 
-     cart.totalPrice = cart.products.reduce((acc,item)=>acc +item.price * item.quantity,0)
-
-    await cart.save()
-    return res.status(200).json(cart)
-  }else{
-    return res.status(404).json({message:"Product not found in cart"})
+    const totalprice = 
   }
 } catch (error) {
-  console.error(error);
-  return res.status(500).json({message: "Server error"})
   
 }
 })
