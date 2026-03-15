@@ -250,7 +250,7 @@ router.get("/best-seller",async(req,res)=>{
 
 router.get("/new-arrivals",async(req,res)=>{
   try {
-    const newArrivals = await Product.find().sort({createdAt: -1}).limit(8)
+    const newArrivals = await Product.findOne().sort({createdAt: -1}).limit(8)
     if(newArrivals){
       res.json(newArrivals)
     }else{
