@@ -1,0 +1,12 @@
+const express = require("express");
+const checkout = require("../models/Product");
+const { protect, admin } = require("../middleware/authMiddleware");
+
+const router = express.Router();
+
+// @route POST /api/products
+// @access Private/Admin
+
+
+
+module.exports = router;
