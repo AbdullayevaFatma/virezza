@@ -162,8 +162,8 @@ router.get("/", async (req, res) => {
 
     if (cart) {
       return res.json(cart);
-    } else {
-      res.status(404).json({ message: "Cart not found" });
+    }else{
+      res.status(404).json({message:"Cart not found"})
     }
   } catch (error) {
     console.error(error);
@@ -199,7 +199,7 @@ router.post("/merge", protect, async (req, res) => {
           (item) =>
             item.productId.toString() === guestItem.productId.toString() &&
             item.size === guestItem.size &&
-            item.color === guestItem.color,
+            item.color === guestItem.color
         );
 
         if (productIndex > -1) {
@@ -212,7 +212,7 @@ router.post("/merge", protect, async (req, res) => {
 
       userCart.totalPrice = userCart.products.reduce(
         (acc, item) => acc + item.price * item.quantity,
-        0,
+        0
       );
 
       await userCart.save();
