@@ -75,6 +75,12 @@ router.delete("/:id", protect, admin, async (req, res) => {
     } else {
       res.status(404).json({ message: "User not found" });
     }
+
+    res.json({ message: "User updated successfully", user });
+
+    res
+      .status(201)
+      .json({ message: "User created successfully", user: updatedUser });
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Server error" });
