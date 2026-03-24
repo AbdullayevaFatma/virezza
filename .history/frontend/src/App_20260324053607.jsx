@@ -22,7 +22,6 @@ import store from "./redux/store"
 
 const App = () => {
   return (
-    <Provider store={store}>
    <BrowserRouter>
     <Toaster position="top-right"/>
    <Routes>
@@ -49,7 +48,6 @@ const App = () => {
     </Route>
    </Routes>
    </BrowserRouter>
-   </Provider>
   )
 }
 
