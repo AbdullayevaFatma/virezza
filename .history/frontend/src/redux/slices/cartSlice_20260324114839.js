@@ -133,34 +133,5 @@ const cartSlice = createSlice({
       state.loading = false;
       state.error=action.payload?.message || "Failed to update item quantity"
     })
-      .addCase(removeFromCart.pending, (state)=>{
-      state.loading = true;
-      state.error=null
-    })
-    .addCase(removeFromCart.fulfilled, (state,action)=>{
-      state.loading = false;
-      state.cart=action.payload
-      saveCartToStorage(action.payload)
-    })
-    .addCase(removeFromCart.rejected, (state,action)=>{
-      state.loading = false;
-      state.error=action.payload?.message || "Failed to remove item "
-    })
-      .addCase(mergeCart.pending, (state)=>{
-      state.loading = true;
-      state.error=null
-    })
-    .addCase(mergeCart.fulfilled, (state,action)=>{
-      state.loading = false;
-      state.cart=action.payload
-      saveCartToStorage(action.payload)
-    })
-    .addCase(mergeCart.rejected, (state,action)=>{
-      state.loading = false;
-      state.error=action.payload?.message || "Failed to merge cart"
-    })
   }
 })
-
-export const {clearCart} = cartSlice.actions
-export default cartSlice.reducer
