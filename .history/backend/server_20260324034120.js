@@ -36,6 +36,6 @@ app.use("/api",subscribeRoutes)
 
 // Admin 
 app.use("/api/admin/users",adminRoutes)
-app.use("/api/admin/products",productAdminRoutes)
+app.use("/api/admin/products",)
 
 app.listen(PORT,()=>{console.log(`Server is running on http://localhost:${PORT}`)})
