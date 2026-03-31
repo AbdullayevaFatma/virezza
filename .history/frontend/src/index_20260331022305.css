@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+#root{
+font-family: "Times New Roman", sans-serif;
+font-optical-sizing: auto;
+font-style: normal;
+}
