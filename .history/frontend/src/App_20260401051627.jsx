@@ -1,6 +1,7 @@
-import {Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, useNavigate } from "react-router-dom";
 import UserLayout from "./components/Layout/UserLayout";
 import Home from "./pages/Home";
+import { Toaster } from "sonner";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Profile from "./pages/Profile";
@@ -16,10 +17,13 @@ import UserManagement from "./components/Admin/UserManagement";
 import ProductManagement from "./components/Admin/ProductManagement";
 import EditProduct from "./components/Admin/EditProduct";
 import OrderManagement from "./components/Admin/OrderManagement";
+import { Provider, useSelector } from "react-redux";
+import store from "./redux/store";
 import { ProtectedRoute } from "./components/Common/ProtectedRoute";
-
+import { useEffect } from "react";
 
 const App = () => {
+  const { user } = useSelector((state) => state.auth);
   
   return (
     <Routes>

@@ -29,7 +29,7 @@ const NewArrivals = () => {
     const fetchNewArrivals = async () => {
       try {
         const response = await axios.get(
-          `${import.meta.env.VITE_BACKEND_URL}/api/products/new-arrivals`,
+          `${import.meta.env.VITE_BACKEND_URL}/api/products/new-arrivals`
         );
         setNewArrivals(response.data);
       } catch (error) {
@@ -79,9 +79,7 @@ const NewArrivals = () => {
                 />
               </div>
               <div className="mt-3 text-center">
-                <p className="text-sm text-gray-800 tracking-wide">
-                  {product.name}
-                </p>
+                <p className="text-sm text-gray-800 tracking-wide">{product.name}</p>
                 <p className="text-sm text-gray-400 mt-1">${product.price}</p>
               </div>
             </Link>
@@ -89,12 +87,12 @@ const NewArrivals = () => {
         </Slider>
       </div>
       <div className="flex justify-center mt-10">
-        <Link to="/collections/all">
-          <button className="bg-black text-white px-4 py-2 text-sm tracking-wider uppercase hover:bg-gray-900 transition cursor-pointer">
-            See All
-          </button>
-        </Link>
-      </div>
+  <Link to="/shop">
+    <button className="bg-black text-white px-4 py-2 text-sm tracking-wider uppercase hover:bg-gray-800 transition">
+      See All
+    </button>
+  </Link>
+</div>
     </section>
   );
 };

@@ -1,9 +1,9 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import { logout } from "./authSlice";
-
 
 // async thunk to fetch admin products  (admin only)
+
+
 
 export const fetchAdminProducts = createAsyncThunk(
   "adminProducts/fetchProducts",
@@ -19,9 +19,11 @@ export const fetchAdminProducts = createAsyncThunk(
       );
       return response.data;
     } catch (error) {
+      // 🔥 ANA NOKTA
       if (error.response?.status === 401) {
         dispatch(logout());
       }
+
       return rejectWithValue(error.response?.data || error.message);
     }
   }

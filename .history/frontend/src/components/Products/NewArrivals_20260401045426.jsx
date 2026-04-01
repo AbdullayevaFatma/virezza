@@ -89,7 +89,7 @@ const NewArrivals = () => {
         </Slider>
       </div>
       <div className="flex justify-center mt-10">
-        <Link to="/collections/all">
+        <Link to="/shop">
           <button className="bg-black text-white px-4 py-2 text-sm tracking-wider uppercase hover:bg-gray-900 transition cursor-pointer">
             See All
           </button>

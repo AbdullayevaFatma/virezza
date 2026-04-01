@@ -1,9 +1,9 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import { logout } from "./authSlice";
-
-
 // async thunk to fetch admin products  (admin only)
+
+
 
 export const fetchAdminProducts = createAsyncThunk(
   "adminProducts/fetchProducts",
